@@ -21,6 +21,10 @@ describe 'redis::default' do
     expect(service('redis-server')).to be_running
   end
 
+  describe port(6379) do
+    it { should be_listening.on('127.0.0.1').with('tcp') }
+  end
+
   it 'creates a redis user' do
     expect(user('redis')).to exist
   end
