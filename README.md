@@ -19,15 +19,15 @@ TBD
 Here's an example `redis` role that will install Redis.
 
 ```ruby
-name "redis"
-description "install redis"
+name 'redis'
+description 'install redis'
 override_attributes(
-  "redis" => {
+  'redis' => {
     ...
   }
 )
 run_list(
-  "recipe[cop_redis::default]"
+  'recipe[cop_redis::default]'
 )
 ```
 
