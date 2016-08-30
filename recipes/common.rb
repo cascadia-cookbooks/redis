@@ -25,6 +25,9 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE.
 
+# TODO: multiple redis instances
+# https://github.com/copious-cookbooks/redis/issues/3
+
 template 'installing redis config' do
     path     '/etc/redis/redis.conf'
     source   'redis/redis.conf.erb'

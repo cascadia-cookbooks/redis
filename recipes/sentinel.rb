@@ -26,16 +26,14 @@
 # THE SOFTWARE.
 
 template 'installing sentinel config' do
-    path     '/etc/redis/sentinel.conf'
-    source   'redis/sentinel.conf.erb'
-    group    'root'
-    owner    'root'
-    mode     0644
-    backup   false
-    action   :create
+    path   '/etc/redis/sentinel.conf'
+    source 'redis/sentinel.conf.erb'
+    group  'root'
+    owner  'root'
+    mode   0644
+    backup false
+    action :create
 end
 
-# TODO
-#service 'redis-server' do
-# redis-server /path/to/sentinel.conf --sentinel
-#end
+# TODO: sentinel as a service
+# https://github.com/copious-cookbooks/redis/issues/4
