@@ -18,4 +18,3 @@ suites:
   - name: default
     run_list:
       - recipe[cop_redis::default]
-    attributes: { redis: { install_method: 'package' } }
