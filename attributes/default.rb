@@ -1,11 +1,3 @@
-# latest stable package release
-case lsb[:release]
-when '14.04'
-    default['redis']['version'] = '2.8.4'
-when '16.04'
-    default['redis']['version'] = '3.0.6'
-end
-
 default['redis'] = {
     'user'          => 'redis',
     'daemonize'     => 'yes',
@@ -23,3 +15,11 @@ default['redis'] = {
         'port'    => '26379',
     }
 }
+
+# latest stable package release
+case lsb[:release]
+when '14.04'
+    default['redis']['version'] = '2.8.4'
+when '16.04'
+    default['redis']['version'] = '3.0.6'
+end
