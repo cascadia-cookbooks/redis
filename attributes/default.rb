@@ -17,7 +17,7 @@ default['redis'] = {
 }
 
 # latest stable package release
-case lsb[:release]
+case node['platform_version']
 when '14.04'
     default['redis']['version'] = '2.8.4'
 when '16.04'
