@@ -19,7 +19,7 @@ default['redis'] = {
 # latest stable package release
 case node['platform_version']
 when '14.04'
-    default['redis']['version'] = '2.8.4'
+    default['redis']['version'] = '2:2.8.4-2'
 when '16.04'
-    default['redis']['version'] = '3.0.6'
+    default['redis']['version'] = '2:3.0.6-1'
 end
