@@ -13,21 +13,29 @@ This cookbook will install Redis Server. At this time this cookbook only support
 - apt
 
 ## Attributes
-TBD
+`node['redis']['port'] => '6379'` This is the port Redis Server will listen on.
+Port `6379` is the standard port for Redis Server.
+`node['redis']['bind'] => '127.0.0.1'` This is the interface Redis Server will
+bind to. Use `0.0.0.0` to bind to all interfaces.
+`node['redis']['maxmemory'] => '1gb'` This is the maximum amount of memory Redis
+Server will use.
 
 ## Usage
-Here's an example `redis` role that will install Redis.
+Here's an example `redis` role that will install Redis. This example changes the
+memory limit to 3GB.
 
 ```ruby
 name 'redis'
 description 'install redis'
+
 override_attributes(
-  'redis' => {
-    ...
-  }
+    'redis' => {
+        'maxmemory' => '4GB'
+    }
 )
+
 run_list(
-  'recipe[cop_redis::default]'
+    'recipe[cop_redis::default]'
 )
 ```
 
