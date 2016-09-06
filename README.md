@@ -18,11 +18,11 @@ Port `6379` is the standard port for Redis Server.
 * `node['redis']['bind'] => '127.0.0.1'` This is the interface Redis Server will
 bind to. Use `0.0.0.0` to bind to all interfaces.
 * `node['redis']['maxmemory'] => '1gb'` This is the maximum amount of memory Redis
-Server will use.
+Server will use. The size is case insensitive.
 
 ## Usage
 Here's an example `redis` role that will install Redis. This example changes the
-memory limit to 3GB.
+memory limit to 4GB.
 
 ```ruby
 name 'redis'
