@@ -29,6 +29,6 @@ include_recipe 'apt'
 
 package 'redis-server' do
     package_name node['redis']['package_name']
-    action  :install
+    action  :upgrade
     version node['redis']['version']
 end
