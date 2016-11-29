@@ -16,6 +16,13 @@ default['redis'] = {
     }
 }
 
+case node['platform']
+when 'ubuntu'
+    default['redis']['package_name'] = 'redis-server'
+when 'centos'
+    default['redis']['package_name'] = 'redis'
+end
+
 # latest stable package release
 case node['platform_version']
 when '14.04'
