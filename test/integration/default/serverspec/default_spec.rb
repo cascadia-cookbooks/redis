@@ -4,11 +4,11 @@ case os[:family]
 when 'ubuntu', 'debian'
     package_name = 'redis-server'
     service_name = 'redis-server'
-    redis_conf = '/etc/redis/redis.conf'
-when 'redhat'
+    redis_conf   = '/etc/redis/redis.conf'
+when 'redhat', 'fedora'
     package_name = 'redis'
     service_name = 'redis'
-    redis_conf = '/etc/redis.conf'
+    redis_conf   = '/etc/redis.conf'
 end
 
 describe 'redis::default' do
