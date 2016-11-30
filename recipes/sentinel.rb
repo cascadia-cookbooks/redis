@@ -26,7 +26,7 @@
 # THE SOFTWARE.
 
 template 'installing sentinel config' do
-    path   '/etc/redis/sentinel.conf'
+    path   node['redis']['sentinel']['conf_file']
     source 'redis/sentinel.conf.erb'
     group  'root'
     owner  'root'

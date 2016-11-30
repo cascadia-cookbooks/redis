@@ -19,10 +19,14 @@ default['redis'] = {
 case node['platform_family']
 when 'debian'
     default['redis']['package_name'] = 'redis-server'
+    default['redis']['service_name'] = 'redis-server'
     default['redis']['conf_file'] = '/etc/redis/redis.conf'
+    default['redis']['sentinel']['conf_file'] = '/etc/redis/sentinel.conf'
 when 'rhel', 'fedora'
     default['redis']['package_name'] = 'redis'
+    default['redis']['service_name'] = 'redis'
     default['redis']['conf_file'] = '/etc/redis.conf'
+    default['redis']['sentinel']['conf_file'] = '/etc/sentinel.conf'
 end
 
 # latest stable package release

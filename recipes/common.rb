@@ -40,5 +40,6 @@ template 'installing redis config' do
 end
 
 service 'redis-server' do
+    service_name node['redis']['service_name']
     action [:enable, :start]
 end
