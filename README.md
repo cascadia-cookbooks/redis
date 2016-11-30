@@ -1,10 +1,12 @@
 # redis Cookbook
-This cookbook will install Redis Server. At this time this cookbook only supports Ubuntu 14.04 and 16.04.
+This cookbook will install Redis Server.
 
 ## Requirements
 ### Platforms
-- Ubuntu 14.04
-- Ubuntu 16.04
+- Ubuntu '>= 14.04'
+- Debian '>= 8.0'
+- Fedora '>= 19'
+- Rhel '>= 7.0'
 
 ### Chef
 - Chef '>= 12.5'

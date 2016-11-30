@@ -29,7 +29,7 @@
 # https://github.com/copious-cookbooks/redis/issues/3
 
 template 'installing redis config' do
-    path     '/etc/redis/redis.conf'
+    path     node['redis']['conf_file']
     source   'redis/redis.conf.erb'
     group    'root'
     owner    'root'
@@ -40,5 +40,6 @@ template 'installing redis config' do
 end
 
 service 'redis-server' do
+    service_name node['redis']['service_name']
     action [:enable, :start]
 end

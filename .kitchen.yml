@@ -1,18 +1,16 @@
 ---
 driver:
-  name: docker
-  provision_command: curl -sL https://www.chef.io/chef/install.sh | bash; apt-get install net-tools
+  name: vagrant
+
+provisioner:
+  name: chef_zero
 
 platforms:
-- name: ubuntu-14.04
-  driver_config:
-    image: ubuntu:14.04
-    platform: ubuntu
-
-- name: ubuntu-16.04
-  driver_config:
-    image: ubuntu:16.04
-    platform: ubuntu
+  - name: ubuntu-14.04
+  - name: ubuntu-16.04
+  - name: centos-7.2
+  - name: fedora-22
+  - name: debian-8.6
 
 suites:
   - name: default

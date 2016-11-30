@@ -28,6 +28,7 @@
 # TODO: install redis via source
 # https://github.com/copious-cookbooks/redis/issues/5
 
+include_recipe 'cop_redis::dependencies'
 include_recipe 'cop_redis::package'
 include_recipe 'cop_redis::common'
 include_recipe 'cop_redis::sentinel'
