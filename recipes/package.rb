@@ -25,8 +25,6 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE.
 
-include_recipe 'apt'
-
 package 'redis-server' do
     package_name node['redis']['package_name']
     action  :upgrade

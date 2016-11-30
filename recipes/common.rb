@@ -29,7 +29,7 @@
 # https://github.com/copious-cookbooks/redis/issues/3
 
 template 'installing redis config' do
-    path     '/etc/redis/redis.conf'
+    path     node['redis']['conf_file']
     source   'redis/redis.conf.erb'
     group    'root'
     owner    'root'

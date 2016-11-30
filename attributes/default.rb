@@ -19,14 +19,17 @@ default['redis'] = {
 case node['platform_family']
 when 'debian'
     default['redis']['package_name'] = 'redis-server'
+    default['redis']['conf_file'] = '/etc/redis/redis.conf'
 when 'rhel', 'fedora'
     default['redis']['package_name'] = 'redis'
+    default['redis']['conf_file'] = '/etc/redis.conf'
 end
 
 # latest stable package release
-case node['platform_version']
-when '14.04'
+version  = node['platform_version'].to_i
+case version
+when '14', '6'
     default['redis']['version'] = '2:2.8.4-*'
-when '16.04'
+when '16', '7'
     default['redis']['version'] = '2:3.0.6-*'
 end
