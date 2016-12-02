@@ -24,7 +24,7 @@ default['redis']['sentinel']['conf_file'] = '/etc/redis/sentinel.conf'
 
 case node['platform_family']
 when 'debian'
-    default['redis']['dependencies'] = %w(autoconf binutils-doc bison build-essential flex gettext jemalloc ncurses-dev)
+    default['redis']['dependencies'] = %w(autoconf binutils-doc bison build-essential libjemalloc-dev)
 when 'rhel'
     default['redis']['dependencies'] = %w(autoconf bison flex gcc gcc-c++ gettext jemalloc kernel-devel make m4 ncurses-devel patch)
 end
