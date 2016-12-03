@@ -10,8 +10,8 @@ source_url 'https://github.com/copious-cookbooks/redis'
 issues_url 'https://github.com/copious-cookbooks/redis/issues'
 
 supports 'ubuntu', '>= 14.04'
-supports 'debian', '>= 8.0'
-supports 'fedora', '>= 19'
-supports 'rhel', '>= 7.0'
+supports 'debian', '>= 7'
+supports 'rhel', '>= 6'
+supports 'centos', '>= 6'
 
 depends 'apt'
