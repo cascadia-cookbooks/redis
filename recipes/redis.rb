@@ -13,7 +13,7 @@ template '/usr/lib/systemd/system/redis.service' do
     mode     0644
     backup   false
     action   :create
-    only_if  'pidof systemd'
+    only_if  'ps -p 1 -o comm= | grep systemd'
 end
 
 # NOTE: initd
@@ -25,7 +25,7 @@ template '/etc/init.d/redis' do
     mode     0755
     backup   false
     action   :create
-    not_if   'pidof systemd'
+    not_if   'ps -p 1 -o comm= | grep systemd'
 end
 
 template 'installing redis config' do
