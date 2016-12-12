@@ -13,14 +13,7 @@ tarball = "#{redis}.tar.gz"
 # NOTE: https not supported
 download = "http://download.redis.io/releases/#{tarball}"
 
-case node['platform_family']
-when 'debian'
-    include_recipe 'apt::default'
-when 'rhel'
-    package 'epel-release' do
-        action :install
-    end
-end
+include_recipe 'cop_base::dependencies'
 
 node['redis']['dependencies'].each do |p|
     package p do
