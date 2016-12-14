@@ -39,5 +39,5 @@ end
 execute 'install redis' do
     cwd     "#{cache}/#{redis}"
     command 'make distclean && make && make install'
-    not_if  "redis-cli --version | grep #{version}"
+    not_if  'which redis-server'
 end
