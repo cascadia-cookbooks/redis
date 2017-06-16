@@ -25,6 +25,8 @@ default['redis']['sentinel']['conf_file'] = '/etc/redis/sentinel.conf'
 case node['platform_family']
 when 'debian'
     default['redis']['dependencies'] = %w(autoconf binutils-doc bison build-essential libjemalloc-dev)
+    default['redis']['systemd_path'] = '/lib/systemd/system'
 when 'rhel'
     default['redis']['dependencies'] = %w(autoconf bison flex gcc gcc-c++ gettext jemalloc kernel-devel make m4 ncurses-devel patch)
+    default['redis']['systemd_path'] = '/usr/lib/systemd/system'
 end

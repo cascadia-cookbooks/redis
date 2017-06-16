@@ -5,7 +5,7 @@
 #
 
 # NOTE: systemd
-template '/usr/lib/systemd/system/redis.service' do
+template "#{node['redis']['systemd_path']}/redis.service" do
     cookbook 'cop_redis'
     source   'systemd/redis.service.erb'
     group    'root'
